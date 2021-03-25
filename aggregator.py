@@ -19,5 +19,5 @@ if __name__ == "__main__":
     tifname = 'topo_remapped.tif'
     shapefile = 'countries'
     statsfile = 'my_stats'
-    my_stats = Stats(tifname, shapefile, statsfile) 
+    my_stats = Stats(shapefile, tifname, statsfile) 
     my_stats.main()
