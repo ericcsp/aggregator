@@ -15,9 +15,13 @@ class Stats:
     def main(self):
         self.make_vector_summary()
 
-if __name__ == "__main__":
-    tifname = 'topo_remapped.tif'
-    shapefile = 'countries'
-    statsfile = 'my_stats'
+def main(input):
+    tifname = f'{input}_remapped.tif'
+    shapefile = 'data/placer/shp/AOI'
+    statsfile = f'{input}_stats'
     my_stats = Stats(shapefile, tifname, statsfile) 
     my_stats.main()
+    return my_stats
+
+if __name__ == "__main__":
+    main('2005_ba')
