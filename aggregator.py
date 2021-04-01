@@ -17,7 +17,7 @@ class Stats:
 
 def main(input):
     tifname = f'{input}_remapped.tif'
-    shapefile = 'data/placer/shp/AOI'
+    shapefile = '/data/placer/shp/AOI'
     statsfile = f'{input}_stats'
     my_stats = Stats(shapefile, tifname, statsfile) 
     my_stats.main()
