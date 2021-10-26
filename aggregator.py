@@ -16,13 +16,16 @@ class Stats:
     def main(self):
         self.make_vector_summary()
 
-def main(input):
-    tifname = f'/home/cspadmin/data/{input}.tif'
-    shapefile = '/home/cspadmin/data/PLACER_fire_bounds_2016_2018.geojson'
-    statsfile = f'{input}_stats.geojson'
+def main(yr, var, region):
+    tifname = f'/big/hls_output_2021-05-13/{yr}/{var}/{yr}_latlon_{var}.vrt'
+    shapefile = f'/home/cspadmin/data/buffer0.geojson'
+    statsfile = f'New_Fire_{yr}_{region}_{var}.geojson'
     my_stats = Stats(shapefile, tifname, statsfile) 
     my_stats.main()
     return my_stats
 
 if __name__ == "__main__":
-    main('2005_ba')
+    my_region = 'conuslatlon'
+    for my_yr in [2016, 2018]:
+        for my_var in ['biomass', 'basalarea', 'canopycover']:
+            main(my_yr, my_var, my_region)
