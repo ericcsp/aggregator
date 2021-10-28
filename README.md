@@ -20,3 +20,14 @@ Note that these can be adjusted as necessary.
 
 ## Notes
 As it stands, the values are hardcoded to the locations of the raster array `tifname`, the shapefile `shapefile`, and the output statistics file `statsfile`. These can be adjusted as necessary in a branch for your needs.
+
+# Tippecanoe
+Tippecanoe creates vector tiles from a geojson
+
+## Installation Instructions
+```sh
+$ git clone https://github.com/mapbox/tippecanoe.git
+$ cd tippecanoe
+$ make -j
+$ make install
+```
