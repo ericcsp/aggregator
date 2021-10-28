@@ -21,6 +21,9 @@ Note that these can be adjusted as necessary.
 ## Notes
 As it stands, the values are hardcoded to the locations of the raster array `tifname`, the shapefile `shapefile`, and the output statistics file `statsfile`. These can be adjusted as necessary in a branch for your needs.
 
+# Post Aggregator
+This is a script that distills the statistics into a form suitable for tiling, keeping the original geojson data and combining it with the statistics data for variables of interest.
+
 # Tippecanoe
 Tippecanoe creates vector tiles from a geojson
 
