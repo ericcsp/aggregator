@@ -31,3 +31,6 @@ $ cd tippecanoe
 $ make -j
 $ make install
 ```
+
+## Upload Tiles
+Use the upload\_tiles.sh script to upload the tiles to Azure Blob Storage. Note you will need to have Azure Command Line Installed (az cli), and you will need to populate the script with the appropriate variables, including the storage key.
