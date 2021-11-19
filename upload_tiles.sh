@@ -1,1 +1,0 @@
-az storage blob upload-batch -d ${AZURE_CONTAINER_NAME}/${AZURE_TILES_DIRECTORY} --account-name ${AZURE_STORAGE_ACCOUNT_NAME} -s ${LOCAL_TILES_DIRECTORY} --content-type application/vnd.mapbox-vector-tile --content-encoding gzip --account-key ${AZURE_STORAGE_ACCOUNT_KEY}

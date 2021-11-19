@@ -1,0 +1,30 @@
+account: usfs
+src_container: app
+src_folder: hls_cog
+local_folder: /big/hls_output_2021-05-13
+src_prefix: ''
+geojson_file: data/Fire_Bounds_US_2017-2018
+geojson_appendix: viascript
+stats_prefix: Fire
+stats_dir: data
+bands:
+        basal_area: basalarea
+        bio_acre: biomass
+        canopy_cvr: canopycover
+slim_variable_props:
+        biomass: sum
+        basalarea: mean
+        canopycover: mean
+region: conus
+properties:
+        - 'min'
+        - 'max'
+        - 'mean'
+        - 'std'
+        - 'sum'
+years:
+        - '2016'
+        - '2017'
+        - '2018'
+        - '2019'
+        - '2020'
