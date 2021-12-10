@@ -67,9 +67,12 @@ class FullStats:
         for col in self.slim_db.columns:
             self.original[col] = self.slim_db[col]
 
+    def eliminate_zero_biomass_features(self):
+        self.nozeros = self.original[~(self.original['sum_2016_biomass']==0)|~(self.original['sum_2017_biomass']==0)|~(self.original['sum_2018_biomass']==0)|~(self.original['sum_2019_biomass']==0)|~(self.original['sum_2020_biomass']==0)]
+
     def write_final_geojson(self):
         kw["tiles_dir"] = f'{kw["stats_dir"]}/{kw["stats_prefix"]}_{kw["region"]}_Statistics_{kw["geojson_appendix"]}'
-        gpd.GeoDataFrame(self.original).to_file('{kw["tiles_dir"]}.geojson', driver='GeoJSON')
+        gpd.GeoDataFrame(self.nozeros).to_file('{kw["tiles_dir"]}.geojson', driver='GeoJSON')
         return kw
 
 def main(**kw):
@@ -79,4 +82,5 @@ def main(**kw):
     my_stats.add_geo_to_slim()
     my_stats.load_original_geojson()
     my_stats.concat_slim_to_original()
+    my_stats.eliminate_zero_biomass_features()
     return my_stats.write_final_geojson()
